@@ -9,6 +9,9 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
+/**
+ * edmServer 의 클라이언트와의 연결 수립 담당
+ */
 public class EdmListeningSocket implements Runnable {
     private final ConnectionDistributor connectionDistributor;
     private final Selector selector;
