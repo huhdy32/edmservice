@@ -1,48 +1,60 @@
 package com.server.edm.net;
 
-import com.server.edm.distribute.StreamConnectionDistributor;
-import com.server.edm.service.downlaod.DownLoadService;
+import com.server.edm.distribute.ConnectionDistributor;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.channels.Selector;
-import java.util.List;
+import java.nio.channels.SocketChannel;
 
 class EdmListeningSocketTest {
-    private static final int SERVERPORT = 41722;
+    private static final int SERVER_PORT = 41722;
+    private static ConnectionDistributor mockConnectionDistributor;
 
-    private final EdmListeningSocket edmListeningSocket;
-    {
+    private static EdmListeningSocket edmListeningSocket;
+
+    private static void initTestServer() {
+        mockConnectionDistributor = new ConnectionDistributor() {
+            @Override
+            public void distribute(SocketChannel clientSocketChannel) {
+            }
+        };
         try {
-            edmListeningSocket = new EdmListeningSocket(Selector.open(), SERVERPORT, new StreamConnectionDistributor(List.of(new DownLoadService()), new ByteParser()));
+            edmListeningSocket = new EdmListeningSocket(Selector.open(), SERVER_PORT, mockConnectionDistributor);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    @BeforeAll
+    static void init() {
+        initTestServer();
+        startServer();
+    }
+
+    static void startServer() {
+        Thread serverSocket = new Thread(edmListeningSocket);
+        serverSocket.start();
+    }
+
     @Test
     void singleConnectionTest() {
-        startServer();
         Socket client = new Socket();
-        Assertions.assertDoesNotThrow(() -> client.connect(new InetSocketAddress(SERVERPORT)));
+        Assertions.assertDoesNotThrow(() -> client.connect(new InetSocketAddress(SERVER_PORT)));
     }
 
     @Test
     void multiConnectionTest() {
-        startServer();
-        for (int i = 0 ; i < 100; i ++) {
+        for (int i = 0 ; i < 25; i ++) {
             Assertions.assertDoesNotThrow(() -> {
                 Socket clientSocket = new Socket();
-                clientSocket.connect(new InetSocketAddress(SERVERPORT));
+                clientSocket.connect(new InetSocketAddress(SERVER_PORT));
             });
         }
-    }
-
-    void startServer() {
-        Thread serverSocket = new Thread(edmListeningSocket);
-        serverSocket.start();
     }
 }

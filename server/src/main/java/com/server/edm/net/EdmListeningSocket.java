@@ -13,6 +13,7 @@ public class EdmListeningSocket implements Runnable {
     private final ConnectionDistributor connectionDistributor;
     private final Selector selector;
     private final int port;
+    private ServerSocketChannel serverSocketChannel;
 
     public EdmListeningSocket(final Selector selector, final int port, final ConnectionDistributor connectionDistributor) throws IOException {
         this.selector = selector;
@@ -22,16 +23,16 @@ public class EdmListeningSocket implements Runnable {
     }
 
     private void init() throws IOException {
-        final ServerSocketChannel socketChannel = ServerSocketChannel.open();
-        socketChannel.configureBlocking(false);
-        socketChannel.bind(new InetSocketAddress(this.port));
-        socketChannel.register(this.selector, SelectionKey.OP_ACCEPT);
+        serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.configureBlocking(false);
+        serverSocketChannel.bind(new InetSocketAddress(this.port));
+        serverSocketChannel.register(this.selector, SelectionKey.OP_ACCEPT);
     }
 
     @Override
     public void run() {
-        while (true) {
-            try {
+        try {
+            while (true) {
                 this.selector.select(selectionKey -> {
                     if (selectionKey.isAcceptable()) {
                         final ServerSocketChannel socketChannel = (ServerSocketChannel) selectionKey.channel();
@@ -44,9 +45,17 @@ public class EdmListeningSocket implements Runnable {
                         connectionDistributor.distribute(channel);
                     }
                 });
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                serverSocketChannel.close();
+                selector.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            return;
         }
     }
 }
