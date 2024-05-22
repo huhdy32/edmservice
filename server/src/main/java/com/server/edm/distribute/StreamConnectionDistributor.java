@@ -1,7 +1,8 @@
 package com.server.edm.distribute;
 
-import com.server.edm.net.DataTransferManager;
+import com.server.edm.net.MessageTransferManager;
 import com.server.edm.service.EdmService;
+import com.server.edm.service.client.ClientManager;
 
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
@@ -12,37 +13,32 @@ import java.util.List;
  */
 public class StreamConnectionDistributor implements ConnectionDistributor {
     private final List<EdmService> edmServices;
-    private final DataTransferManager dataTransferManager;
+    private final ClientManager clientManager;
+    private final MessageTransferManager messageTransferManger;
 
-    public StreamConnectionDistributor(final List<EdmService> edmServices, final DataTransferManager dataTransferManager) {
+    public StreamConnectionDistributor(List<EdmService> edmServices, ClientManager connectionManager, MessageTransferManager messageTransferManger) {
         this.edmServices = edmServices;
-        this.dataTransferManager = dataTransferManager;
+        this.clientManager = connectionManager;
+        this.messageTransferManger = messageTransferManger;
     }
 
     @Override
     public void distribute(final SocketChannel clientSocketChannel) {
-        int errorCount = 0;
+        final boolean registered = messageTransferManger.requestUntil(
+                clientSocketChannel,
+                "다음 서비스 중 택 1 : " + edmServices.toString(),
+                clientResponse -> edmServices.stream().anyMatch(edmService -> edmService.register(clientResponse, clientSocketChannel, clientManager))
+        ).isPresent();
 
-        while (true) {
-            final String clientCommand = dataTransferManager.sendAndRecieve(clientSocketChannel, ("다음 서비스 중 택 1 : " + getAllServiceName()).getBytes());
-            for (final EdmService edmService : edmServices) {
-                if (edmService.isAcceptable(clientCommand, clientSocketChannel)) {
-                    return;
-                }
-            }
-            dataTransferManager.send(clientSocketChannel, ("[ERROR] 잘못된 입력 [" + errorCount + "] 회").getBytes());
-            errorCount += 1;
-            if(errorCount == 5) {
-                dataTransferManager.send(clientSocketChannel, " 접속 종료 ".getBytes());
-                try {
-                    clientSocketChannel.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                throw new IllegalArgumentException("잘못된 입력");
+        if (!registered) {
+            try {
+                clientSocketChannel.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
+
 
     private String getAllServiceName() {
         return edmServices.toString();
