@@ -20,8 +20,8 @@ class BasicClientManagerTest {
         this.basicClientManager = new BasicClientManager(messageTransferManager);
     }
 
-    void modifyClientResponse(final String response) {
-        final DataTransferManager dataTransferManager = new DataTransferManager() {
+    DataTransferManager modifyClientResponse(final String response) {
+        return new DataTransferManager() {
             @Override
             public byte[] sendAndRecieve(SocketChannel socketChannel, byte[] data) {
                 return encoder.encode(response);
@@ -32,14 +32,13 @@ class BasicClientManagerTest {
 
             }
         };
-        init(dataTransferManager);
     }
 
     @Test
     void duplicateNameInSameServiceTest() throws IOException {
         final EdmService edmService = new DownLoadService();
         final String name = "tester";
-        modifyClientResponse(name);
+        init(modifyClientResponse(name));
 
         final SocketChannel socketChannel = SocketChannel.open();
         basicClientManager.register(edmService, socketChannel);
@@ -53,7 +52,7 @@ class BasicClientManagerTest {
         final EdmService edmService1 = new DownLoadService();
         final EdmService edmService2 = new DownLoadService();
         final String name = "tester";
-        modifyClientResponse(name);
+        init(modifyClientResponse(name));
 
         final SocketChannel socketChannel1 = SocketChannel.open();
         final SocketChannel socketChannel2 = SocketChannel.open();
