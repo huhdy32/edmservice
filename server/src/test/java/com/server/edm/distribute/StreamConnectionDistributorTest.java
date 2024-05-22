@@ -3,7 +3,7 @@ package com.server.edm.distribute;
 import com.server.edm.net.MessageTransferManager;
 import com.server.edm.service.EdmService;
 import com.server.edm.service.downlaod.DownLoadService;
-import com.server.edm.service.register.ConnectionManager;
+import com.server.edm.service.client.ClientManager;
 import com.server.edm.service.stream.StreamingService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ class StreamConnectionDistributorTest {
     /**
      * Mock
      */
-    private ConnectionManager connectionManager = new ConnectionManager() {
+    private ClientManager clientManager = new ClientManager() {
         @Override
         public void register(EdmService edmService, SocketChannel socketChannel) {
 
@@ -55,7 +55,7 @@ class StreamConnectionDistributorTest {
     }
 
     void initDistributor() {
-        this.streamConnectionDistributor = new StreamConnectionDistributor(List.of(downloadService, streamingService), connectionManager, messageTransferManger);
+        this.streamConnectionDistributor = new StreamConnectionDistributor(List.of(downloadService, streamingService), clientManager, messageTransferManger);
     }
 
     @Test
