@@ -1,9 +1,8 @@
 package com.server.edm.distribute;
 
-import com.server.edm.net.BasicMessageTransferManager;
 import com.server.edm.net.MessageTransferManager;
 import com.server.edm.service.EdmService;
-import com.server.edm.service.register.ConnectionManager;
+import com.server.edm.service.client.ClientManager;
 
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
@@ -14,12 +13,12 @@ import java.util.List;
  */
 public class StreamConnectionDistributor implements ConnectionDistributor {
     private final List<EdmService> edmServices;
-    private final ConnectionManager connectionManager;
+    private final ClientManager clientManager;
     private final MessageTransferManager messageTransferManger;
 
-    public StreamConnectionDistributor(List<EdmService> edmServices, ConnectionManager connectionManager, MessageTransferManager messageTransferManger) {
+    public StreamConnectionDistributor(List<EdmService> edmServices, ClientManager connectionManager, MessageTransferManager messageTransferManger) {
         this.edmServices = edmServices;
-        this.connectionManager = connectionManager;
+        this.clientManager = connectionManager;
         this.messageTransferManger = messageTransferManger;
     }
 
@@ -28,7 +27,7 @@ public class StreamConnectionDistributor implements ConnectionDistributor {
         final boolean registered = messageTransferManger.requestUntil(
                 clientSocketChannel,
                 "다음 서비스 중 택 1 : " + edmServices.toString(),
-                clientResponse -> edmServices.stream().anyMatch(edmService -> edmService.register(clientResponse, clientSocketChannel, connectionManager))
+                clientResponse -> edmServices.stream().anyMatch(edmService -> edmService.register(clientResponse, clientSocketChannel, clientManager))
         ).isPresent();
 
         if (!registered) {
