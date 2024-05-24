@@ -1,4 +1,4 @@
-package com.server.edm.service.distribute;
+package com.server.edm.service.downlaod.distribute;
 
 import java.io.BufferedInputStream;
 import java.nio.channels.SocketChannel;
