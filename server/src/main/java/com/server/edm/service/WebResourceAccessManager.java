@@ -1,6 +1,7 @@
 package com.server.edm.service;
 
+import java.io.BufferedInputStream;
+
 public interface WebResourceAccessManager {
-    void setUrl(final String url);
-    void start();
+    BufferedInputStream access(final String url);
 }
