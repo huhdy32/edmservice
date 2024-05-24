@@ -3,8 +3,12 @@ package com.server.edm.service.downlaod;
 import com.server.edm.service.EdmService;
 import com.server.edm.service.WebResourceAccessManager;
 import com.server.edm.service.client.ClientManager;
+import com.server.edm.service.distribute.FileDistributingManager;
+import com.server.edm.ui.DownloadServiceUI;
 
+import java.io.BufferedInputStream;
 import java.nio.channels.SocketChannel;
+import java.util.Set;
 
 /**
  * Download Service v1.0
@@ -13,9 +17,15 @@ import java.nio.channels.SocketChannel;
 public class DownLoadService implements EdmService {
     private static final String DOWNLOAD = "download";
     private final ClientManager clientManager;
+    private final WebResourceAccessManager webResourceAccessManager;
+    private final DownloadServiceUI downloadServiceUI;
+    private final FileDistributingManager fileDistributingManager;
 
-    public DownLoadService(final ClientManager clientManager) {
+    public DownLoadService(final ClientManager clientManager, final WebResourceAccessManager webResourceAccessManager, final DownloadServiceUI downloadServiceUI, final FileDistributingManager fileDistributingManager) {
         this.clientManager = clientManager;
+        this.webResourceAccessManager = webResourceAccessManager;
+        this.downloadServiceUI = downloadServiceUI;
+        this.fileDistributingManager = fileDistributingManager;
     }
 
     @Override
@@ -30,7 +40,13 @@ public class DownLoadService implements EdmService {
     @Override
     public void doService() {
         // 서버 사용자로부터 어떤 파일을 다운로드 받을지 지정하는 로직
-        // 웹 url 을 입력받아
+        final String url = downloadServiceUI.getUrl();
+        final String fileName = downloadServiceUI.getFileName();
+
+        final BufferedInputStream inputStream = webResourceAccessManager.access(url);
+        final Set<SocketChannel> channels = clientManager.getChannels(this);
+
+        fileDistributingManager.distribute(channels, inputStream, fileName);
     }
 
     @Override
