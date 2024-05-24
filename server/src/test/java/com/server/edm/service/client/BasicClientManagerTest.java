@@ -14,6 +14,24 @@ class BasicClientManagerTest {
     private BasicClientManager basicClientManager;
     private MessageTransferManager messageTransferManager;
     private Encoder encoder = new UTFEncoder();
+    private EdmService createMockService(final String serviceName) {
+        return new EdmService() {
+            @Override
+            public boolean register(String clientReqestServiceName, SocketChannel socketChannel) {
+                return false;
+            }
+
+            @Override
+            public void doService() {
+
+            }
+
+            @Override
+            public String toString() {
+                return serviceName;
+            }
+        };
+    }
 
     void init(final DataTransferManager dataTransferManager) {
         this.messageTransferManager = new BasicMessageTransferManager(dataTransferManager, encoder);
@@ -36,7 +54,7 @@ class BasicClientManagerTest {
 
     @Test
     void duplicateNameInSameServiceTest() throws IOException {
-        final EdmService edmService = new DownLoadService();
+        final EdmService edmService = createMockService("tester");
         final String name = "tester";
         init(modifyClientResponse(name));
 
@@ -49,9 +67,9 @@ class BasicClientManagerTest {
 
     @Test
     void duplicateNameInDifferentServiceTest() throws IOException {
-        final EdmService edmService1 = new DownLoadService();
-        final EdmService edmService2 = new DownLoadService();
         final String name = "tester";
+        final EdmService edmService2 = createMockService("testService");
+        final EdmService edmService1 = createMockService("testService");
         init(modifyClientResponse(name));
 
         final SocketChannel socketChannel1 = SocketChannel.open();
@@ -59,5 +77,16 @@ class BasicClientManagerTest {
 
         basicClientManager.register(edmService1, socketChannel1);
         basicClientManager.register(edmService2, socketChannel2);
+    }
+
+    @Test
+    void getCorrectChannelsTest() throws IOException {
+        final EdmService edmService = createMockService("tester");
+        final String name = "tester";
+        init(modifyClientResponse(name));
+        final SocketChannel socketChannel = SocketChannel.open();
+        basicClientManager.register(edmService, socketChannel);
+
+        Assertions.assertEquals(basicClientManager.getChannels(edmService).size(), 1);
     }
 }

@@ -1,13 +1,16 @@
 package com.server.edm.service.client;
 
+import com.server.edm.net.DataTransferManager;
 import com.server.edm.net.MessageTransferManager;
 import com.server.edm.service.EdmService;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BasicClientManager implements ClientManager {
     private final Set<Client> clients = new HashSet<>();
@@ -26,6 +29,14 @@ public class BasicClientManager implements ClientManager {
     public void register(EdmService edmService, SocketChannel socketChannel) {
         final Client client = createClient(edmService, socketChannel);
         clients.add(client);
+    }
+
+    @Override
+    public Set<SocketChannel> getChannels(final EdmService edmService) {
+        return clients.stream()
+                .filter(client -> client.edmService.equals(edmService))
+                .map(client -> client.socketChannel)
+                .collect(Collectors.toSet());
     }
 
     /**
