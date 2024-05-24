@@ -36,7 +36,7 @@ class BasicClientManagerTest {
 
     @Test
     void duplicateNameInSameServiceTest() throws IOException {
-        final EdmService edmService = new DownLoadService();
+        final EdmService edmService = new DownLoadService(basicClientManager);
         final String name = "tester";
         init(modifyClientResponse(name));
 
@@ -49,8 +49,8 @@ class BasicClientManagerTest {
 
     @Test
     void duplicateNameInDifferentServiceTest() throws IOException {
-        final EdmService edmService1 = new DownLoadService();
-        final EdmService edmService2 = new DownLoadService();
+        final EdmService edmService1 = new DownLoadService(basicClientManager);
+        final EdmService edmService2 = new DownLoadService(basicClientManager);
         final String name = "tester";
         init(modifyClientResponse(name));
 

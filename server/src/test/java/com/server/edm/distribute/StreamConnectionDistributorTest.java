@@ -31,8 +31,8 @@ class StreamConnectionDistributorTest {
 
         }
     };
-    private EdmService downloadService = new DownLoadService();
-    private EdmService streamingService = new StreamingService();
+    private EdmService downloadService = new DownLoadService(clientManager);
+    private EdmService streamingService = new StreamingService(clientManager);
     /**
      * Mock
      */
