@@ -2,7 +2,7 @@ package com.server.edm.service.client;
 
 import com.server.edm.net.*;
 import com.server.edm.service.EdmService;
-import com.server.edm.service.downlaod.DownLoadService;
+import com.server.edm.service.ServiceCategory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,13 +17,33 @@ class BasicClientManagerTest {
     private EdmService createMockService(final String serviceName) {
         return new EdmService() {
             @Override
-            public boolean register(String clientReqestServiceName, SocketChannel socketChannel) {
+            public String getName() {
+                return null;
+            }
+
+            @Override
+            public boolean register(SocketChannel socketChannel) {
                 return false;
             }
 
             @Override
             public void doService() {
 
+            }
+
+            @Override
+            public boolean isRunning() {
+                return false;
+            }
+
+            @Override
+            public ServiceCategory getCategory() {
+                return null;
+            }
+
+            @Override
+            public int getClientSize() {
+                return 0;
             }
 
             @Override
@@ -40,13 +60,14 @@ class BasicClientManagerTest {
 
     DataTransferManager modifyClientResponse(final String response) {
         return new DataTransferManager() {
+
             @Override
-            public byte[] sendAndRecieve(SocketChannel socketChannel, byte[] data) {
-                return encoder.encode(response);
+            public byte[] sendAndRecieve(SocketChannel socketChannel, byte[] data, int byteCount) {
+                return new byte[0];
             }
 
             @Override
-            public void send(SocketChannel socketChannel, byte[] data) {
+            public void send(SocketChannel socketChannel, byte[] data, int byteCount) {
 
             }
         };
