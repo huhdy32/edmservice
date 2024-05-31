@@ -26,9 +26,9 @@ public class BasicClientManager implements ClientManager {
      * @param socketChannel 연결된 세션
      */
     @Override
-    public void register(EdmService edmService, SocketChannel socketChannel) {
+    public boolean register(EdmService edmService, SocketChannel socketChannel) {
         final Client client = createClient(edmService, socketChannel);
-        clients.add(client);
+        return clients.add(client);
     }
 
     @Override

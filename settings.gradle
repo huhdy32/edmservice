@@ -1,4 +1,5 @@
 rootProject.name = 'edm'
 include 'server'
 include 'client'
+include 'protocol'
 

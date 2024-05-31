@@ -1,6 +1,7 @@
 package com.server.edm.service.stream;
 
 import com.server.edm.service.EdmService;
+import com.server.edm.service.ServiceCategory;
 import com.server.edm.service.WebResourceAccessManager;
 import com.server.edm.service.client.ClientManager;
 
@@ -15,18 +16,33 @@ public class StreamingService implements EdmService{
     }
 
     @Override
-    public boolean register(final String clientReqestServiceName, final SocketChannel socketChannel) {
-        if (clientReqestServiceName.equals(STREAMING)) {
-            // 서비스에 해당 연결을 등록하는 로직
-            clientManager.register(this, socketChannel);
-            return true;
-        }
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public boolean register(SocketChannel socketChannel) {
         return false;
     }
 
     @Override
     public void doService() {
 
+    }
+
+    @Override
+    public boolean isRunning() {
+        return false;
+    }
+
+    @Override
+    public ServiceCategory getCategory() {
+        return null;
+    }
+
+    @Override
+    public int getClientSize() {
+        return 0;
     }
 
     @Override

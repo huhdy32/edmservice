@@ -18,6 +18,11 @@ public class BasicMessageTransferManager implements MessageTransferManager {
         this.encoder = encoder;
     }
 
+    @Override
+    public void send(SocketChannel socketChannel, String message) {
+
+    }
+
     /**
      * MAX_TRY_COUNT = 5 입니다. 5번의 시도에도 predicate 결과가 false 이면, 빈 optional 을 리턴합니다.
      * @param socketChannel 전송할 대상입니다.
@@ -27,7 +32,7 @@ public class BasicMessageTransferManager implements MessageTransferManager {
      */
     @Override
     public Optional<String> requestUntil(final SocketChannel socketChannel, final String request, final Predicate<String> predicate) {
-        final byte[] data = encoder.encode(request);
+        final byte[] data = encoder.encode(this.addNewLine(request));
         return request(socketChannel, data, predicate, MAX_TRY_COUNT);
     }
 
@@ -40,7 +45,7 @@ public class BasicMessageTransferManager implements MessageTransferManager {
      */
     @Override
     public Optional<String> requestUntil(final SocketChannel socketChannel, final String request, final Predicate<String> predicate, final int tryCount) {
-        final byte[] data = encoder.encode(request);
+        final byte[] data = encoder.encode(this.addNewLine(request));
         return request(socketChannel, data, predicate, tryCount);
     }
 
@@ -52,8 +57,8 @@ public class BasicMessageTransferManager implements MessageTransferManager {
      * @return 클라이언트로부터의 응답 값입니다. predicate와 일치하지 않을 경우, 빈 Optional 을 리턴합니다.
      */
     @Override
-    public boolean request(SocketChannel socketChannel, String request, Predicate<String> predicate) {
-        return request(socketChannel, encoder.encode(request), predicate, 1).isPresent();
+    public boolean request(final SocketChannel socketChannel, final String request, final Predicate<String> predicate) {
+        return request(socketChannel, encoder.encode(this.addNewLine(request)), predicate, 1).isPresent();
     }
 
     private Optional<String> request(final SocketChannel socketChannel, final byte[] data, final Predicate<String> predicate, final int tryCount) {
@@ -65,5 +70,9 @@ public class BasicMessageTransferManager implements MessageTransferManager {
             }
         }
         return Optional.empty();
+    }
+
+    private String addNewLine(final String message) {
+        return message +"\n";
     }
 }

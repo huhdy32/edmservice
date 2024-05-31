@@ -5,7 +5,6 @@ import java.util.Arrays;
 public enum ClientRequestProtocol {
     SERVICE_LIST("SERVICELIST"),
     SERVICE_MAPPING("MAPTOSERVICE"),
-    REGISTER_SERVICE_CLIENT_NICKNAME("REGISTERNAME"),
     WAITING_FOR_START("IMWAITING");
 
     private final String instruction;
