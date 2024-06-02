@@ -5,15 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6585264-0b90-4064-abfc-3155128add26" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/client/edm/ui/InputUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/client/edm/ui/OutputUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,10 +136,10 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="AnnotationType" />
-        <option value="Record" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -127,28 +167,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/yoon/projects/edm&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gant&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;f924d65c2ee9d43e388eb4b43a175e68&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/yoon/projects/edm/client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gant",
+    "spring.configuration.checksum": "f924d65c2ee9d43e388eb4b43a175e68",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.server.edm.distribute" />
@@ -156,6 +196,11 @@
       <recent name="com.client.edm.net" />
       <recent name="com.client.edm.clientservice.OpenedService" />
       <recent name="com.client.edm.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -168,7 +213,7 @@
       <recent name="com.server.edm.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EdmServerStarter">
+  <component name="RunManager" selected="Gradle.Tests in 'edm.server.test'">
     <configuration name="EdmServerStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.server.edm.EdmServerStarter" />
       <module name="edm.server.main" />
@@ -262,10 +307,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'edm.server.test'" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.EdmServerStarter" />
         <item itemvalue="Gradle.edm [dependencies]" />
-        <item itemvalue="Gradle.Tests in 'edm.server.test'" />
         <item itemvalue="Gradle.ConsoleInputUITest.test" />
       </list>
     </recent_temporary>
@@ -290,6 +335,8 @@
       <workItem from="1716975368928" duration="25879000" />
       <workItem from="1717143617106" duration="44000" />
       <workItem from="1717143679439" duration="47000" />
+      <workItem from="1717289322140" duration="204000" />
+      <workItem from="1717293132473" duration="1717000" />
     </task>
     <servers />
   </component>
