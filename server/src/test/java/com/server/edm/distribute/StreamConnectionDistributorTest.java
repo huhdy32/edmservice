@@ -87,6 +87,11 @@ class StreamConnectionDistributorTest {
     private void modifyMessageTransferManagerReceivedData(final String result) {
         this.messageTransferManger = new MessageTransferManager() {
             @Override
+            public void send(SocketChannel socketChannel, String message) {
+
+            }
+
+            @Override
             public Optional<String> requestUntil(SocketChannel socketChannel, String request, Predicate<String> predicate) {
                 return Optional.of(result);
             }

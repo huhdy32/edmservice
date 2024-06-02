@@ -28,6 +28,7 @@ public class EdmServiceController implements Runnable {
 
     @Override
     public void run() {
+        this.serverThread.start();
         startController();
     }
 
