@@ -5,55 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6585264-0b90-4064-abfc-3155128add26" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase_[Changes]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +128,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/yoon/projects/edm/client",
+    "last_opened_file_path": "/Users/yoon/projects/edm/protocol",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -198,6 +151,7 @@
       <recent name="com.client.edm.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/protocol" />
       <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$" />
@@ -336,7 +290,7 @@
       <workItem from="1717143617106" duration="44000" />
       <workItem from="1717143679439" duration="47000" />
       <workItem from="1717289322140" duration="204000" />
-      <workItem from="1717293132473" duration="1717000" />
+      <workItem from="1717293132473" duration="1927000" />
     </task>
     <servers />
   </component>
