@@ -1,6 +1,6 @@
 package com.client.edm.net;
 
-import com.client.edm.service.ServiceMapper;
+import com.client.edm.service.mapper.ServiceMapper;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
