@@ -24,11 +24,17 @@ public class BufferBasedDataTransferManager implements DataTransferManager {
     private byte[] recieveOnly(final SocketChannel socketChannel) {
         final ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
         List<Byte> receivedData = new ArrayList<>();
+        boolean check = true;
         try {
-            while (socketChannel.read(buffer) > 0) {
+            while (check && socketChannel.read(buffer) > 0) {
                 buffer.flip();
                 while(buffer.hasRemaining()) {
-                    receivedData.add(buffer.get());
+                    byte tempByte = buffer.get();
+                    if ((char)tempByte == '\n') {
+                        check = false;
+                        break;
+                    }
+                    receivedData.add(tempByte);
                 }
                 buffer.clear();
             }
