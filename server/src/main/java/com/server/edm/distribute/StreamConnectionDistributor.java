@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.channels.SocketChannel;
 
 /**
- * Java bio를 이용해 스트림 기반으로 통신하여 매핑 수행
+ * 클라이언트를 서비스로 매핑 로직
  */
 public class StreamConnectionDistributor implements ConnectionDistributor {
     private final ServiceManager serviceManager;
@@ -26,9 +26,10 @@ public class StreamConnectionDistributor implements ConnectionDistributor {
     public void distribute(final SocketChannel clientSocketChannel) {
         final boolean registered = messageTransferManger.requestUntil(
                 clientSocketChannel,
-                "다음 서비스 중 택 1 : " + serviceManager.getServicesInfo().toString() + "\n",
+                "다음 서비스 중 택 1 : " + serviceManager.getServicesInfo() +"\n",
                 clientResponse -> {
                     try{
+                        System.out.println("response : " + clientResponse);
                         final int serviceNumber = Integer.parseInt(clientResponse);
                         final EdmService edmService = serviceManager.getService(serviceNumber);
                         return edmService.register(clientSocketChannel);
@@ -38,15 +39,12 @@ public class StreamConnectionDistributor implements ConnectionDistributor {
                     }
                 }
         ).isPresent();
-
         if (!registered) {
             try {
-                messageTransferManger.send(clientSocketChannel, "다시 하쇼");
                 clientSocketChannel.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-        messageTransferManger.send(clientSocketChannel, "연결 성곤");
     }
 }
