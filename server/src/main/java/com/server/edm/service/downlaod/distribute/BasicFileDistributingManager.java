@@ -3,9 +3,8 @@ package com.server.edm.service.downlaod.distribute;
 import com.protocol.edm.DownloadCommand;
 import com.server.edm.net.DataTransferManager;
 import com.server.edm.net.MessageTransferManager;
-import com.server.edm.service.WebResource;
+import com.server.edm.service.web.WebResource;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
 import java.util.Set;

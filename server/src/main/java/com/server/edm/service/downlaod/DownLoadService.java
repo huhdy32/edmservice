@@ -4,13 +4,12 @@ import com.protocol.edm.ServerServiceCode;
 import com.server.edm.net.MessageTransferManager;
 import com.server.edm.service.EdmService;
 import com.server.edm.service.ServiceCategory;
-import com.server.edm.service.WebResource;
-import com.server.edm.service.WebResourceAccessManager;
+import com.server.edm.service.web.WebResource;
+import com.server.edm.service.web.WebResourceAccessManager;
 import com.server.edm.service.client.ClientManager;
 import com.server.edm.service.downlaod.distribute.FileDistributingManager;
 import com.server.edm.service.downlaod.ui.DownloadServiceUI;
 
-import java.io.BufferedInputStream;
 import java.nio.channels.SocketChannel;
 import java.util.Set;
 

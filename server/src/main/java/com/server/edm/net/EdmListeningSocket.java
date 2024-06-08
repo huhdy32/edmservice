@@ -42,10 +42,11 @@ public class EdmListeningSocket implements Runnable {
                         final SocketChannel channel;
                         try {
                             channel = socketChannel.accept();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
+                            channel.configureBlocking(true);
+                            connectionDistributor.distribute(channel);
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                        connectionDistributor.distribute(channel);
                     }
                 });
             }

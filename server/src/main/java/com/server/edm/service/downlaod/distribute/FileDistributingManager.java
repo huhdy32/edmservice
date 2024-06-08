@@ -1,8 +1,7 @@
 package com.server.edm.service.downlaod.distribute;
 
-import com.server.edm.service.WebResource;
+import com.server.edm.service.web.WebResource;
 
-import java.io.BufferedInputStream;
 import java.nio.channels.SocketChannel;
 import java.util.Set;
 

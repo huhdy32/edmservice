@@ -1,4 +1,4 @@
-package com.server.edm.service;
+package com.server.edm.service.web;
 
 import java.io.*;
 import java.net.MalformedURLException;
