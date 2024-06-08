@@ -30,6 +30,7 @@ public class EdmServiceController implements Runnable {
     public void run() {
         this.serverThread.start();
         startController();
+        serverThread.interrupt();
     }
 
     private void startController() {
@@ -47,7 +48,6 @@ public class EdmServiceController implements Runnable {
             consumer.accept(input);
             outputUI.printInfo("\n");
         }
-        serverThread.interrupt();
     }
 
     private void createService() {
