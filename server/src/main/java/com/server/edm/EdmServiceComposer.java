@@ -57,7 +57,7 @@ public class EdmServiceComposer {
 
         final Selector selector;
 
-        final DownLoadServiceFactory downLoadServiceFactory = getDownLoadServiceFactory(fileDistributingManager, clientManager, webResourceAccessManager, downloadServiceUI);
+        final DownLoadServiceFactory downLoadServiceFactory = getDownLoadServiceFactory(fileDistributingManager, clientManager, webResourceAccessManager, downloadServiceUI, messageTransferManager);
         final FactoryManager factoryManager = getFactoryManager(downLoadServiceFactory);
 
         final Thread serverThread;
@@ -88,8 +88,8 @@ public class EdmServiceComposer {
         return basicFactoryManager;
     }
 
-    private DownLoadServiceFactory getDownLoadServiceFactory(FileDistributingManager fileDistributingManager, ClientManager clientManager, WebResourceAccessManager webResourceAccessManager, DownloadServiceUI downloadServiceUI) {
-        final DownLoadServiceFactory downLoadServiceFactory = new DownLoadServiceFactory(clientManager, webResourceAccessManager, downloadServiceUI, fileDistributingManager);
+    private DownLoadServiceFactory getDownLoadServiceFactory(FileDistributingManager fileDistributingManager, ClientManager clientManager, WebResourceAccessManager webResourceAccessManager, DownloadServiceUI downloadServiceUI, MessageTransferManager messageTransferManager) {
+        final DownLoadServiceFactory downLoadServiceFactory = new DownLoadServiceFactory(clientManager, webResourceAccessManager, downloadServiceUI, fileDistributingManager, messageTransferManager);
         logInfo(downLoadServiceFactory.toString());
         return downLoadServiceFactory;
     }
@@ -143,7 +143,7 @@ public class EdmServiceComposer {
     }
 
     private Encoder getEncoder() {
-        final UTFEncoder utfEncoder = new UTFEncoder();
+        final ProtocolEncoder utfEncoder = new ProtocolEncoder();
         logInfo(utfEncoder);
         return utfEncoder;
     }
