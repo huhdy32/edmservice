@@ -1,10 +1,9 @@
 package com.server.edm.net;
 
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 
-public class UTFEncoder implements Encoder {
-    private final Charset CHARSET = StandardCharsets.UTF_8;
+public class ProtocolEncoder implements Encoder {
+    private final Charset CHARSET = com.protocol.edm.Encoder.CHARSET;
 
     @Override
     public String decode(final byte[] bytes) {
