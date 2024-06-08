@@ -1,7 +1,10 @@
 package com.server.edm.service.downlaod;
 
+import com.protocol.edm.ServerServiceCode;
+import com.server.edm.net.MessageTransferManager;
 import com.server.edm.service.EdmService;
 import com.server.edm.service.ServiceCategory;
+import com.server.edm.service.WebResource;
 import com.server.edm.service.WebResourceAccessManager;
 import com.server.edm.service.client.ClientManager;
 import com.server.edm.service.downlaod.distribute.FileDistributingManager;
@@ -20,16 +23,18 @@ public class DownLoadService implements EdmService {
     private final String serviceName;
     private final ClientManager clientManager;
     private final WebResourceAccessManager webResourceAccessManager;
+    private final MessageTransferManager messageTransferManager;
     private final DownloadServiceUI downloadServiceUI;
     private final FileDistributingManager fileDistributingManager;
     private Boolean running = false;
 
-    public DownLoadService(final String serviceName, final ClientManager clientManager, final WebResourceAccessManager webResourceAccessManager, final DownloadServiceUI downloadServiceUI, final FileDistributingManager fileDistributingManager) {
+    public DownLoadService(final String serviceName, final ClientManager clientManager, final WebResourceAccessManager webResourceAccessManager, final DownloadServiceUI downloadServiceUI, final FileDistributingManager fileDistributingManager, final MessageTransferManager messageTransferManager) {
         this.serviceName = serviceName;
         this.clientManager = clientManager;
         this.webResourceAccessManager = webResourceAccessManager;
         this.downloadServiceUI = downloadServiceUI;
         this.fileDistributingManager = fileDistributingManager;
+        this.messageTransferManager = messageTransferManager;
     }
 
     @Override
@@ -37,6 +42,7 @@ public class DownLoadService implements EdmService {
         if (getCurrState()) {
             throw new IllegalArgumentException("이미 다운로드가 시작되었습니다.");
         }
+        messageTransferManager.send(socketChannel, ServerServiceCode.DOWNLOAD_SERVICE.getServerResponse());
         return clientManager.register(this, socketChannel);
     }
 
@@ -50,10 +56,10 @@ public class DownLoadService implements EdmService {
         final String url = downloadServiceUI.getUrl();
         final String fileName = downloadServiceUI.getFileName();
 
-        final BufferedInputStream inputStream = webResourceAccessManager.access(url);
+        final WebResource webResource = webResourceAccessManager.access(url);
         final Set<SocketChannel> channels = clientManager.getChannels(this);
 
-        fileDistributingManager.distribute(channels, inputStream, fileName);
+        fileDistributingManager.distribute(channels, webResource, fileName);
         changeCurrState(false);
     }
 

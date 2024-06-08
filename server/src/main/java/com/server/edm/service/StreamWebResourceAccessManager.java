@@ -8,13 +8,11 @@ import java.net.URLConnection;
 public class StreamWebResourceAccessManager implements WebResourceAccessManager {
 
     @Override
-    public BufferedInputStream access(final String path) {
-        return getResourceStream(path);
+    public WebResource access(final String path) {
+        final URLConnection connection = getConnection(getURL(path));
+        return new WebResource(getInputStream(connection), getFileSize(connection));
     }
 
-    private BufferedInputStream getResourceStream(final String path) {
-        return getInputStream(getConnection(getURL(path)));
-    }
     private URLConnection getConnection(final URL url) {
         try {
             return url.openConnection();
@@ -35,5 +33,8 @@ public class StreamWebResourceAccessManager implements WebResourceAccessManager 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    private Long getFileSize(final URLConnection connection) {
+        return connection.getContentLengthLong();
     }
 }
