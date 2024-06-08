@@ -20,7 +20,8 @@ public class BasicMessageTransferManager implements MessageTransferManager {
 
     @Override
     public void send(SocketChannel socketChannel, String message) {
-
+        final byte[] data = encoder.encode(addNewLine(message));
+        dataTransferManager.send(socketChannel, data, data.length);
     }
 
     /**
